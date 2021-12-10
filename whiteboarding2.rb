@@ -127,17 +127,46 @@
 # Loop through the rest of the array, comparing each item to "number"
 # If an item is greater than "number", "number" is now the item
 
-def array_max(array)
-  number = array[0]
-  index = 0
+# def array_max(array)
+#   number = array[0]
+#   index = 0
 
-  while index < array.length
-    if array[index] > number
-      number = array[index]
-    end
+#   while index < array.length
+#     if array[index] > number
+#       number = array[index]
+#     end
+#     index += 1
+#   end
+#   return number
+# end
+
+# p array_max([55, 17, -4, 20, 21, 0, 52])
+
+# // Missing Letter //
+
+# A given string contains all the letters from the alphabet except for one. Return the missing letter.
+
+# NOTE: You must accomplish this in O(n) time. This is also known as linear time.
+
+# Input: “The quick brown box jumps over a lazy dog”
+# Output: “f”
+
+# Input: “The quick brown box jumps over a lazy dog”
+#             ^
+
+#   alphabet = {a: false, b: false, c: false....t: true, h: true, e: true,..f: false  }
+
+#   p alphabet, where value = false
+
+def missing_letter(input)
+  alphabet = { a: false, b: false, c: false, d: false, e: false, f: false, g: false, h: false, i: false, j: false, k: false, l: false, m: false, n: false, o: false, p: false, q: false, r: false, s: false, t: false, u: false, v: false, w: false, x: false, y: false, z: false }
+  index = 0
+  while index < input.length
+    letter = input[index].downcase
+    alphabet[:"#{letter}"] = true
     index += 1
   end
-  return number
+  return alphabet.key(false)
 end
 
-p array_max([55, 17, -4, 20, 21, 0, 52])
+p missing_letter("The quick brown box jumps over a lazy dog")
