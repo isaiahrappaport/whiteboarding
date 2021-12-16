@@ -158,15 +158,90 @@
 
 #   p alphabet, where value = false
 
-def missing_letter(input)
-  alphabet = { a: false, b: false, c: false, d: false, e: false, f: false, g: false, h: false, i: false, j: false, k: false, l: false, m: false, n: false, o: false, p: false, q: false, r: false, s: false, t: false, u: false, v: false, w: false, x: false, y: false, z: false }
-  index = 0
-  while index < input.length
-    letter = input[index].downcase
-    alphabet[:"#{letter}"] = true
-    index += 1
-  end
-  return alphabet.key(false)
-end
+# def missing_letter(input)
+#   alphabet = { a: false, b: false, c: false, d: false, e: false, f: false, g: false, h: false, i: false, j: false, k: false, l: false, m: false, n: false, o: false, p: false, q: false, r: false, s: false, t: false, u: false, v: false, w: false, x: false, y: false, z: false }
+#   index = 0
+#   while index < input.length
+#     letter = input[index].downcase
+#     alphabet[:"#{letter}"] = true
+#     index += 1
+#   end
+#   return alphabet.key(false)
+# end
 
-p missing_letter("The quick brown box jumps over a lazy dog")
+# p missing_letter("The quick brown box jumps over a lazy dog")
+
+# Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+# An input string is valid if:
+
+# Open brackets must be closed by the same type of brackets.
+# Open brackets must be closed in the correct order.
+
+# Example 1:
+# Input: s = "()"
+# Output: true
+
+# Example 2:
+# Input: s = "()[]{}"
+# Output: true
+
+# Example 3:
+# Input: s = "(]"
+# Output: false
+
+# s = "()}}"
+#      ^
+# stack = [{}]
+# if s[index] == ")" || s[index] == "{" || s[index] == "[" || s[index] == "("
+
+#      i
+#      i-1
+
+#          i = i-1
+#          valid
+
+# def string_validity(string) # 1
+#   stack = []               # 2
+
+#   string.each_char do |ch|
+#     case ch
+#     when "("
+#       stack << ch
+#     when ")"
+#       return false if stack.empty?
+#       stack.pop
+#     end
+#   end
+#   true
+# end
+
+# balanced = "(abc(123))"
+# unbalanced = ")abc(123))"
+
+# p string_validity("(]")
+
+# //Reserve: Product//
+
+# Write a function that accepts an array of numbers and returns the product of all the numbers.
+
+# Input: [1, 2, 3, 4]
+# Output: 24
+
+# Explanation: (1 x 2 x 3 x 4) = 24
+
+# Input = [1,4,2]
+#              ^
+# Output: 8
+
+# product = 1 << *1 << *4 << *2
+
+# def multiplier(array)
+#   product = 1
+#   array.each do |number|
+#     product = product * number
+#   end
+#   return product
+# end
+
+# p multiplier([1, 2, 3, 4])
