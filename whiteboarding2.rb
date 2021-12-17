@@ -245,3 +245,58 @@
 # end
 
 # p multiplier([1, 2, 3, 4])
+
+# Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+# For example, the square matrix is shown below:
+
+# 1 2 3
+# 4 5 6
+# 9 8 9
+
+# 1 + 5 + 9 = 15
+# -
+# 3 + 5 + 9 = 17
+
+# = 2
+
+# index = 0
+# left_to_right = 0 + 1 + 5 + 9 = 15
+# right_to_left = 0 + 3 + 5 + 9 = 17
+
+# row_1 = [1 2 3]
+#              ^
+#          index + 2
+
+# row_2 = [4 5 6]
+#            ^
+#            index + 1
+# row_3 = [9 8 9 ]
+#          ^
+#              index
+
+# left_to_right - right_to_left = 2
+
+def absolute_value(array)
+  index = 0
+  second_index = 0
+  left_to_right = 0
+  right_to_left = 0
+  difference = 0
+  while index < array.length
+    left_to_right = left_to_right + array[index][second_index]
+    index += 1
+    second_index += 1
+  end
+  index = 0
+  second_index = 0
+  while index < array.length
+    right_to_left = right_to_left + array[index][second_index - 1]
+    index += 1
+    second_index -= 1
+  end
+  difference = left_to_right - right_to_left
+  return difference.abs()
+end
+
+p absolute_value([[1, 2, 3], [4, 5, 6], [9, 8, 9]])
