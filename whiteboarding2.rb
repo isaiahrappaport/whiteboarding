@@ -277,26 +277,43 @@
 
 # left_to_right - right_to_left = 2
 
-def absolute_value(array)
-  index = 0
-  second_index = 0
-  left_to_right = 0
-  right_to_left = 0
-  difference = 0
-  while index < array.length
-    left_to_right = left_to_right + array[index][second_index]
-    index += 1
-    second_index += 1
+# def absolute_value(array)
+#   index = 0
+#   second_index = 0
+#   left_to_right = 0
+#   right_to_left = 0
+#   difference = 0
+#   while index < array.length
+#     left_to_right = left_to_right + array[index][second_index]
+#     index += 1
+#     second_index += 1
+#   end
+#   index = 0
+#   second_index = 0
+#   while index < array.length
+#     right_to_left = right_to_left + array[index][second_index - 1]
+#     index += 1
+#     second_index -= 1
+#   end
+#   difference = left_to_right - right_to_left
+#   return difference.abs()
+# end
+
+# p absolute_value([[1, 2, 3], [4, 5, 6], [9, 8, 9]])
+
+# Given an array, write a function that returns an array that contains the original array’s values in reverse.
+
+# Input: [1, 2, 3, 4, 5]
+# Output: [5, 4, 3, 2, 1]
+
+def reverse_array(array)
+  index = -1
+  reverse_array = []
+  array.length.times do
+    reverse_array << array[index]
+    index -= 1
   end
-  index = 0
-  second_index = 0
-  while index < array.length
-    right_to_left = right_to_left + array[index][second_index - 1]
-    index += 1
-    second_index -= 1
-  end
-  difference = left_to_right - right_to_left
-  return difference.abs()
+  return reverse_array
 end
 
-p absolute_value([[1, 2, 3], [4, 5, 6], [9, 8, 9]])
+p reverse_array([1, 2, 3, 4, 5, 6])
