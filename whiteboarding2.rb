@@ -306,14 +306,75 @@
 # Input: [1, 2, 3, 4, 5]
 # Output: [5, 4, 3, 2, 1]
 
-def reverse_array(array)
-  index = -1
-  reverse_array = []
-  array.length.times do
-    reverse_array << array[index]
-    index -= 1
-  end
-  return reverse_array
-end
+# def reverse_array(array)
+#   index = -1
+#   reverse_array = []
+#   array.length.times do
+#     reverse_array << array[index]
+#     index -= 1
+#   end
+#   return reverse_array
+# end
 
-p reverse_array([1, 2, 3, 4, 5, 6])
+# p reverse_array([1, 2, 3, 4, 5, 6])
+
+# Write a function that gives the Nth number of the Fibonacci Sequence. The Fibonacci sequence begins with 0 and 1, and every number thereafter is the sum of the previous two numbers. So the sequence goes like this:
+
+# 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, and so on until infinity...
+
+# Input: 9
+# Output: 21 (as this is the 9th number of the Fibonacci Sequence)
+
+# 0 1 1 2 3 5 8 13 21 34
+#                  x
+#                     y
+#                         z
+
+# z = x + y
+
+# x = 0
+# y = 1
+
+# z = x + Y
+
+# x = y
+# y = z
+
+# def fibonacci(n)
+#   x = 0
+#   y = 1
+#   z = x + y
+#   n = n - 3
+#   n.times do
+#     x = y
+#     y = z
+#     z = x + y
+#   end
+#   return z
+# end
+
+# p fibonacci(10)
+
+# Write a function that prints out every number from 1 to N, with the following exceptions:
+
+# If the number is divisible by 3, print out "FIZZ".
+# If the number is divisible by 5, print out "BUZZ".
+# If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
+
+# def fizzbuzz(n)
+#   number = 1
+#   while number <= n
+#     if number % 3 == 0 && number % 5 == 0
+#       p "FIZZBUZZ"
+#     elsif number % 3 == 0
+#       p "FIZZ"
+#     elsif number % 5 == 0
+#       p "BUZZ"
+#     else
+#       p number
+#     end
+#     number += 1
+#   end
+# end
+
+# p fizzbuzz(30)
