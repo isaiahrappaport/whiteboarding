@@ -378,3 +378,31 @@
 # end
 
 # p fizzbuzz(30)
+
+# ARRAY SKIP IT
+
+# Given an array of numbers, write a function that returns a new array of numbers based on the array, skipping the amount of places
+# indicated by the currently selected number
+
+# For example:
+
+# # Input:
+# [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
+   0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+#                                                        ^
+
+# Output:
+# [2, 3, 1, 2, 2, 1, 5, 2, 2]
+
+def skip_it(array)
+  index = 0
+  new_array = []                 
+  while index < array.length      20 < 19
+    current_number = array[index] 2
+    new_array << current_number   [2, 3, 1, 2, 2, 1, 5, 2, 2]
+    index += current_number        18 + 2 = 20
+  end
+  return new_array                  = [2, 3, 1, 2, 2, 1, 5, 2, 2]
+end
+
+p skip_it([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2])
