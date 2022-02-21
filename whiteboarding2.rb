@@ -388,21 +388,75 @@
 
 # # Input:
 # [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
-   0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+#  0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
 #                                                        ^
 
 # Output:
 # [2, 3, 1, 2, 2, 1, 5, 2, 2]
 
-def skip_it(array)
+# def skip_it(array)
+#   index = 0
+#   new_array = []
+#   while index < array.length      20 < 19
+#     current_number = array[index] 2
+#     new_array << current_number   [2, 3, 1, 2, 2, 1, 5, 2, 2]
+#     index += current_number        18 + 2 = 20
+#   end
+#   return new_array                  = [2, 3, 1, 2, 2, 1, 5, 2, 2]
+# end
+
+# p skip_it([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2])
+
+# REVERSE STRING
+
+# Write a function that returns the reverse of a given string.
+
+# Input: “abcde”
+# Output: “edcba”
+
+# Using a while loop, loop through each letter in the string and print it
+# start the index at the end of the string using -1 and add 1 to the index on each loop until it reaches string.length -1
+
+# def reverse_string(string)
+#   reversed_string = ""
+#   index = string.length - 1
+#   while index >= 0
+#     reversed_string << string[index]
+#     index = index - 1
+#   end
+#   return reversed_string
+# end
+
+# p reverse_string("abcde")
+
+# SHOW ME THE MONEY
+# Given a string, write a function that returns true if the “$” character is contained within the string or false if it is not.
+
+# Input: “i hate $ but i love money i know i know im crazy”
+# Output: true
+
+# Input: “abcdefghijklmnopqrstuvwxyz”
+# Output: false
+
+# using a while loop, loop through each letter in the string and have each letter go through an if condition that if the letter
+# equals "$" insert it into an empty string. at the end if the empty string = "$" write true. else, write false.
+
+def show_me_the_money(string)
+  money = ""
   index = 0
-  new_array = []                 
-  while index < array.length      20 < 19
-    current_number = array[index] 2
-    new_array << current_number   [2, 3, 1, 2, 2, 1, 5, 2, 2]
-    index += current_number        18 + 2 = 20
+  while index < string.length
+    if string[index] == "$"
+      money = string[index]
+      break
+    end
+    index += 1
   end
-  return new_array                  = [2, 3, 1, 2, 2, 1, 5, 2, 2]
+  if money == "$"
+    p true
+  else
+    p false
+  end
+  return money
 end
 
-p skip_it([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2])
+p show_me_the_money("i hate $ but i love money i know i know im crazy")
