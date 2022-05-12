@@ -41,3 +41,47 @@
 // }
 
 // console.log(stringCombo(["a", "b", "c"], ["d", "e", "f", "g"]));
+
+// function stringCombo(array1, array2) {
+//   var index = 0;
+//   var stringCombos = [];
+//   while (index < array1.length) {
+//     var secondIndex = 0;
+//     while (secondIndex < array2.length) {
+//       stringCombos.push(array1[index] + array2[secondIndex]);
+//       secondIndex += 1;
+//     }
+//     index += 1;
+//   }
+//   return stringCombos;
+// }
+
+// console.log(stringCombo(["a", "b", "c"], ["d", "e,", "f", "g"]));
+
+// Given an array of numbers, write a function that returns a new array that contains all numbers from the original array that are less than 100.
+
+// Input: [99, 101, 88, 4, 2000, 50]
+// Output: [99, 88, 4, 50]
+
+// write a function that loops through the array
+// write an if condition that if it is less than 100, add it to an empty array
+// print the new array
+
+// Input: [99, 101, 88, 4, 2000, 50]
+//             ``` `             ^
+//         4 < 100? = true
+
+//         new array = [99, 88, 4, 50]
+
+function lessThanHundred(array) {
+  var smallNumbers = [];
+  for (i = 0; i < array.length; i += 1) {
+    var number = array[i];
+    if (number < 100) {
+      smallNumbers.push(number);
+    }
+  }
+  return smallNumbers;
+}
+
+console.log(lessThanHundred([99, 101, 88, 4, 2000, 50]));
