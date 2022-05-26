@@ -85,3 +85,27 @@ function lessThanHundred(array) {
 }
 
 console.log(lessThanHundred([99, 101, 88, 4, 2000, 50]));
+
+/*Given an array of numbers, write a function that returns a new array whose values are the original array’s value doubled.
+
+Input: [4, 2, 5, 99, -4]
+                      ^
+                      *2
+
+// Output: [8, 4, 10, 198, -8]
+
+doubledNumbers = [8, 4, 10, 198, -8]
+
+write a function that loops through an array and prints each number
+Now, within each loop of the number, multiply it by two and put it in a new array called doubledNumbers
+print doubledNumbers*/
+
+function doubledNumbers(array) {
+  var timesTwo = [];
+  for (i = 0; i < array.length; i += 1) {
+    timesTwo.push(array[i] * 2);
+  }
+  return timesTwo;
+}
+
+console.log(doubledNumbers([4, 2, 5, 99, -4]));
